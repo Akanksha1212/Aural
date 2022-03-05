@@ -1,3 +1,5 @@
+import 'package:aural/onboarding.dart';
+import 'package:aural/screens/home.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -7,6 +9,10 @@ void main() {
       switch (settings.name) {
         case '/':
           return MaterialPageRoute(builder: (context) => MyApp());
+        case '/onboarding':
+          return MaterialPageRoute(builder: (context) => OnBoardingPage());
+        case '/home':
+          return MaterialPageRoute(builder: (context) => Home());
       }
     },
     debugShowCheckedModeBanner: false,
@@ -35,7 +41,7 @@ class _MyAppState extends State<MyApp> {
       body: Container(
         constraints: BoxConstraints.expand(),
 
-        decoration: BoxDecoration(color: Color(0xffEEE6F3)),
+        decoration: BoxDecoration(color: Color.fromARGB(255, 255, 255, 255)),
         // child: Image.asset('assets/images/logo.png'),
         height: double.infinity,
         child: Column(
@@ -43,14 +49,7 @@ class _MyAppState extends State<MyApp> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Image(
-              image: AssetImage(
-                "assets/.png",
-              ),
-              width: 300,
-              height: 300,
-            ),
-            Image(
-              image: AssetImage("assets/.png"),
+              image: AssetImage("assets/aural.png"),
               width: 300,
               height: 300,
             ),
